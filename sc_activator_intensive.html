@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Serious Capital Activator Intensive — Solve Next · Think Wrong</title>
+<style>
+:root {
+  --pink: #ff0099;
+  --black: #000000;
+  --white: #ffffff;
+  --navy: #333399;
+  --gray: #8a8a8f;
+  --light-gray: #f2f2f2;
+  /* Programme accent */
+  --indigo: #1A1464;
+  --indigo-mid: #333399;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: var(--indigo);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: var(--pink);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.top-bar {
+  padding: 28px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+.brand {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.brand span { color: var(--pink); }
+.brand-tagline {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-top: 3px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 18px;
+  color: rgba(255,255,255,0.92);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  position: relative;
+  z-index: 10;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: clamp(64px, 10vw, 112px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+.hero-title span { color: var(--pink); }
+.hero-sub {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.92);
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.hero-meta {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.meta-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 5px;
+}
+.meta-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.hero-scroll {
+  padding: 32px 60px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 10;
+}
+.scroll-line { width: 60px; height: 1px; background: var(--pink); }
+.scroll-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ── NAV STRIP ── */
+.nav-strip {
+  background: var(--pink);
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-strip a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.nav-strip a:hover { background: rgba(0,0,0,0.15); }
+
+/* ── BASE SECTIONS ── */
+.section {
+  padding: 72px 60px;
+  border-bottom: 1px solid #eee;
+}
+.section-alt {
+  background: var(--light-gray);
+}
+.section-alt,
+.section-alt p,
+.section-alt h2,
+.section-alt h3,
+.section-alt li,
+.section-alt .lead,
+.section-alt .stat-label,
+.section-alt .day-desc,
+.section-alt .detail-value {
+  color: var(--black);
+}
+.section-dark {
+  background: var(--black);
+  color: var(--white);
+}
+.section-dark p,
+.section-dark .lead { color: rgba(255,255,255,0.92); }
+
+.section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+.section-dark .section-tag { color: rgba(255,255,255,0.55); }
+.section-alt .section-tag { color: var(--pink); }
+
+.section-title {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--black);
+}
+.section-dark .section-title { color: var(--white); }
+.section-alt .section-title { color: var(--black); }
+
+.lead {
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.65;
+  max-width: 760px;
+  margin-bottom: 36px;
+  color: #222;
+}
+.section-dark .lead { color: rgba(255,255,255,0.95); }
+
+p {
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 700px;
+  margin-bottom: 14px;
+  color: #222;
+}
+.section-dark p { color: rgba(255,255,255,0.92); max-width: 760px; }
+
+.pullquote {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  border-left: 6px solid var(--pink);
+  padding-left: 26px;
+  margin: 40px 0;
+  max-width: 680px;
+  color: var(--black);
+}
+.section-dark .pullquote { color: var(--white); }
+.section-alt .pullquote { color: var(--black); }
+
+.divider {
+  height: 1px;
+  background: var(--pink);
+  max-width: 80px;
+  margin: 32px 0;
+}
+.section-dark .divider { background: rgba(255,255,255,0.2); }
+.section-alt .divider { background: var(--black); }
+
+/* ── CHALLENGE GRID ── */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 40px;
+}
+.challenge-cell {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 28px;
+  border-left: 3px solid transparent;
+  transition: border-color 0.25s;
+}
+.section-alt .challenge-cell {
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-left: 3px solid transparent;
+}
+.challenge-cell:hover { border-left-color: var(--pink); }
+.section-alt .challenge-cell:hover { border-left-color: var(--pink); }
+.challenge-num {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--pink);
+  opacity: 0.82;
+  margin-bottom: 12px;
+}
+.challenge-cell h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+.section-alt .challenge-cell h3 { color: var(--black); }
+.challenge-cell p { font-size: 14px; max-width: none; margin-bottom: 0; color: rgba(255,255,255,0.7); }
+.section-alt .challenge-cell p { color: #444; }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  border: 1px solid #ddd;
+}
+.section-dark .stat-strip { border-color: rgba(255,255,255,0.12); }
+.stat-cell {
+  padding: 28px 24px;
+  border-right: 1px solid #ddd;
+}
+.section-dark .stat-cell { border-right-color: rgba(255,255,255,0.12); }
+.stat-cell:last-child { border-right: none; }
+.stat-number {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--pink);
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--gray);
+  margin-top: 6px;
+}
+.section-alt .stat-label { color: #555; }
+
+/* ── SCHEDULE ── */
+.schedule { margin-top: 40px; display: flex; flex-direction: column; gap: 2px; }
+.day-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+}
+.section-alt .day-row {
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid transparent;
+  margin-bottom: 2px;
+}
+.day-row:hover { background: rgba(255,255,255,0.07); border-left-color: var(--pink); }
+.section-alt .day-row:hover { background: #f8f8f8; border-left-color: var(--pink); }
+.day-label {
+  padding: 24px 20px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.section-alt .day-label { border-right-color: #e0e0e0; }
+.day-num {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--pink);
+  opacity: 0.82;
+}
+.day-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+}
+.section-alt .day-name { color: var(--gray); }
+.day-content { padding: 24px 28px; }
+.day-theme {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+.day-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.section-alt .day-title { color: var(--black); }
+.day-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.88);
+  max-width: none;
+  margin-bottom: 0;
+}
+.section-alt .day-desc { color: #444; }
+.day-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+}
+.section-alt .pill { border-color: #bbb; color: #555; }
+.pill.field { border-color: var(--navy); color: var(--navy); }
+.section-dark .pill.field { border-color: rgba(100,100,255,0.6); color: rgba(180,180,255,0.85); }
+.pill.classroom { border-color: var(--gray); color: var(--gray); }
+.pill.keynote { border-color: var(--pink); color: var(--pink); }
+
+/* ── DAY ROW ARRIVAL VARIANT ── */
+.day-row--arrival {
+  opacity: 0.55;
+  border-left-color: rgba(255,255,255,0.15) !important;
+}
+.section-alt .day-row--arrival {
+  border-left-color: #ccc !important;
+}
+.day-row--arrival .day-num {
+  opacity: 0.5;
+  font-size: 22px;
+}
+.day-row--arrival .day-theme {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.section-alt .day-row--arrival .day-theme { color: #aaa; }
+
+/* ── METHODOLOGY STEPS ── */
+.method-steps { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
+.method-step {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+}
+.section-alt .method-step {
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+  border-left: 3px solid transparent;
+  margin-bottom: 2px;
+}
+.method-step:hover { background: rgba(255,255,255,0.07); border-left-color: var(--pink); }
+.section-alt .method-step:hover { background: #f8f8f8; border-left-color: var(--pink); }
+.step-num-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--pink);
+  opacity: 0.82;
+  letter-spacing: -0.04em;
+}
+.section-alt .step-num-col { border-right-color: #e0e0e0; }
+.step-body { padding: 22px 24px; }
+.step-body h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.section-alt .step-body h4 { color: var(--black); }
+.step-body p { font-size: 13px; color: rgba(255,255,255,0.88); line-height: 1.65; max-width: none; margin-bottom: 0; }
+.section-alt .step-body p { color: #444; }
+
+/* ── FOR WHOM ── */
+.whom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+.whom-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--pink);
+}
+.section-dark .whom-col h3 { color: var(--white); }
+.whom-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.whom-list li {
+  font-size: 15px;
+  line-height: 1.55;
+  padding-left: 20px;
+  position: relative;
+  color: #333;
+}
+.section-dark .whom-list li { color: rgba(255,255,255,0.92); }
+.whom-list li::before { content: '→'; position: absolute; left: 0; color: var(--pink); font-weight: 700; }
+
+/* ── DETAILS GRID ── */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 36px;
+}
+.detail-cell {
+  background: rgba(255,255,255,0.04);
+  padding: 22px 24px;
+}
+.section-alt .detail-cell { background: var(--white); border: 1px solid #e0e0e0; }
+.detail-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+.section-alt .detail-label { color: #888; }
+.detail-value {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.6;
+}
+.section-alt .detail-value { color: var(--black); }
+.detail-value strong { font-weight: 700; color: var(--white); }
+.section-alt .detail-value strong { color: var(--black); }
+
+/* ── CSG INTRO / HIGHLIGHT BOX ── */
+.csg-intro {
+  background: rgba(255,255,255,0.06);
+  border-left: 4px solid var(--pink);
+  padding: 24px 28px;
+  margin: 0 0 36px;
+  max-width: 860px;
+}
+.section-alt .csg-intro {
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-left: 4px solid var(--pink);
+}
+.csg-intro-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+.csg-intro p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.95);
+  max-width: none;
+  margin-bottom: 10px;
+}
+.csg-intro p:last-child { margin-bottom: 0; }
+.section-alt .csg-intro p { color: #333; }
+
+/* ── LADDER STRIP ── */
+.ladder-steps { display: flex; gap: 0; margin-top: 16px; }
+.ladder-step {
+  flex: 1;
+  padding: 12px 16px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.section-alt .ladder-step { border-right-color: #e0e0e0; }
+.ladder-step:last-child { border-right: none; }
+.ls-level {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.section-alt .ls-level { color: #999; }
+.ls-name { font-size: 13px; font-weight: 700; color: var(--white); }
+.section-alt .ls-name { color: var(--black); }
+.ls-name.active { color: var(--pink); }
+.ls-route { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.section-alt .ls-route { color: #777; }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--black);
+  padding: 100px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(26,20,100,0.45) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-title {
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.0;
+}
+.cta-title span { color: var(--pink); }
+.cta-sub {
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.92);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+.cta-buttons { display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; }
+.btn-primary {
+  background: var(--pink);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #cc007a; }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--white); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--black);
+  color: rgba(255,255,255,0.90);
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-brand {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+.footer-brand span { color: var(--pink); }
+.footer-tagline {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.35);
+  margin-top: 3px;
+}
+</style>
+</head>
+<body>
+<!-- HERO -->
+<section class="hero" id="top">
+<div class="top-bar">
+<div>
+<div class="brand">Solve/<span>Next</span> · Think Wrong</div>
+<div class="brand-tagline">Govern the decade.</div>
+</div>
+<div class="badge">Serious Capital Activator Intensive · Level 1</div>
+</div>
+<div class="hero-content">
+<div class="hero-eyebrow">Powered by Think Wrong · 3 Days · Certified Serious Capital Activator™</div>
+<h1 class="hero-title">Think Wrong.<br/><span>Activate</span><br/>capital clarity.</h1>
+<p class="hero-sub">The Think Wrong Innovators Intensives use an external industry—wine, arts, surf, Irish whiskey—as a live laboratory for learning the methodology. This programme uses a different laboratory: your own organization. Participants arrive with a live challenge where capital is genuinely at stake. They leave three days later with the four core Think Wrong capabilities developed and applied—and the Certified Serious Capital Activator™ credential that marks the discipline as earned.</p>
+<div class="hero-meta">
+<div>
+<div class="meta-label">Format</div>
+<div class="meta-value">3 Days Immersive</div>
+</div>
+<div>
+<div class="meta-label">Capacity</div>
+<div class="meta-value">Capped at 25</div>
+</div>
+<div>
+<div class="meta-label">Credential</div>
+<div class="meta-value">Certified Serious Capital Activator™</div>
+</div>
+<div>
+<div class="meta-label">Programme Fee</div>
+<div class="meta-value">$5,000</div>
+</div>
+</div>
+</div>
+<div class="hero-scroll">
+<div class="scroll-line"></div>
+<div class="scroll-label">Scroll to explore</div>
+</div>
+</section>
+<!-- NAV STRIP -->
+<nav class="nav-strip">
+<a href="#challenge">The Problem</a>
+<a href="#program">The Programme</a>
+<a href="#capabilities">What you’ll learn</a><a href="#schedule">Three Days</a>
+<a href="#methodology">What You Learn</a>
+<a href="#for-whom">Who Should Attend</a>
+<a href="#details">Details</a>
+<a href="#next">What Comes Next</a>
+<a href="#register">Register</a>
+</nav>
+<!-- THE PROBLEM -->
+<section class="section section-dark" id="challenge">
+<div class="section-tag">Why Think Wrong</div>
+<h2 class="section-title">The bets that matter most
+are the ones you can’t afford to get wrong.</h2>
+<p class="lead">Every significant growth initiative has a moment—usually early, usually brief—when the assumptions underneath it are still examinable. When the team hasn’t yet committed. When the timeline hasn’t yet collapsed the space for honest inquiry. When someone could still ask the question that needs to be asked. Think Wrong is the discipline for that moment. It is not a creativity methodology or an idea generation tool. It is the structured practice for surfacing what your organisation believes, distinguishing it from what your organisation actually knows, and designing the smallest action that converts belief into evidence—before the capital commits and the window closes.</p>
+<div class="divider"></div>
+<p>The result is that capital is committed before the most consequential assumptions are tested. When the environment shifts—and it always does—the assumptions don’t fail gradually. They fail in clusters, at the worst possible moment, when the capital has already been deployed and reversing the commitment carries a cost that makes reversal feel reckless. The Serious Capital Activator Intensive is the discipline that interrupts this pattern—before the commitment is made.</p>
+<div class="challenge-grid">
+<div class="challenge-cell">
+<div class="challenge-num">01</div>
+<h3>The confidence in the room is not the same as evidence.</h3>
+<p>Most significant growth bets feel certain from the inside. The team believes in the initiative. The strategic logic is coherent. The numbers support the narrative. None of this is evidence. Think Wrong is the practice that makes the distinction—and finds the question that hasn’t been asked yet.</p>
+</div>
+<div class="challenge-cell">
+<div class="challenge-num">02</div>
+<h3>The most dangerous moment is when execution replaces inquiry.</h3>
+<p>Organisations with strong execution capability are particularly vulnerable. Once the decision is made and the team mobilises, asking whether the problem was correctly framed feels like obstruction. Think Wrong creates the discipline to stay in the question longer—before the momentum makes the question unwelcome.</p>
+</div>
+<div class="challenge-cell">
+<div class="challenge-num">03</div>
+<h3>The timeline always arrives before the evidence does.</h3>
+<p>The pressure to commit—from stakeholders, boards, competitive dynamics, and organisational momentum—consistently outpaces the pace at which evidence can be gathered. Think Wrong doesn’t slow the timeline. It designs evidence-generating actions that fit inside it—small, credible, fast enough to matter before the window closes.</p>
+</div>
+<div class="challenge-cell">
+<div class="challenge-num">04</div>
+<h3>The people building the capital are the last to question the bet.</h3>
+<p>Stopping is treated as failure. Questioning is treated as obstruction. The same forces that make an organisation good at execution make it resistant to the honest inquiry that would have prevented the expensive mistake. Think Wrong gives leaders the practice and the permission to ask the question the room isn’t asking—without it reading as a lack of conviction.</p>
+</div>
+</div>
+<div class="pullquote">“The most expensive question in any organisation is the one no one asked before the capital committed.”</div>
+</section>
+<!-- THE PROGRAMME -->
+<section class="section section-alt" id="program">
+<div class="section-tag">The Programme</div>
+<h2 class="section-title">Your organization<br/>is the laboratory.</h2>
+<p class="lead">The Think Wrong Innovators Intensives (Wine, Arts, Irish Whiskey, Surf) use an external industry as the learning laboratory—a live challenge at a visible deflection point, where assumptions are embedded in the landscape and can be tested against real stakeholders over 4.5 days. The Serious Capital Activator Intensive is the alternative for leaders who want the full Think Wrong methodology without the field-based industry context, without the 4.5-day commitment, and without the need to travel to a specific European location. The laboratory here is your own organization. Participants bring a live challenge—a growth bet, a portfolio decision, a transformation initiative, an AI deployment—where capital is genuinely at stake and the assumptions beneath it have not been rigorously tested. There is no case study. There is no simulation. The work is real, and it is yours.</p>
+<div class="divider"></div>
+<div class="stat-strip">
+<div class="stat-cell">
+<div class="stat-number">3</div>
+<div class="stat-label">Days of structured methodology applied to a live organizational challenge</div>
+</div>
+<div class="stat-cell">
+<div class="stat-number">6</div>
+<div class="stat-label">Think Wrong practices developed and applied across the three-day arc</div>
+</div>
+<div class="stat-cell">
+<div class="stat-number">25</div>
+<div class="stat-label">Maximum participants—capped to preserve conversation quality and application depth</div>
+</div>
+<div class="stat-cell">
+<div class="stat-number">1</div>
+<div class="stat-label">Credential earned: Certified Serious Capital Activator™</div>
+</div>
+</div>
+<p style="margin-top:32px;">Participants select a live challenge from their organization before arriving—a growth bet, a portfolio decision, a transformation initiative, an AI deployment—where capital is at stake and the assumptions beneath it have not been rigorously tested. The three days are structured to surface those assumptions, classify them by evidence quality, identify which are most consequential to the capital decision, and design the smallest credible evidence-generating action that can reduce uncertainty before commitment is locked in.</p>
+<p>By Day 3, participants leave with a tested assumption map for their live challenge, the facilitation capability to run this discipline inside their own organization, and the credential that marks them as a Certified Serious Capital Activator™—the first level of the Serious Capital Leadership Ladder.</p>
+</section>
+<!-- SCHEDULE -->
+<section class="section section-dark" id="capabilities"><div class="section-tag">Four capabilities. Three days.</div><h2 class="section-title">What goes home with you.</h2><p class="lead">The Activator Intensive develops the same four core Think Wrong capabilities as the field-based Innovators Intensives—applied directly to your own live organizational challenge rather than to an external industry. Three days. Your challenge. Real stakes. By Day 3, most participants can run these practices with their own teams.</p><div class="divider"></div><div class="challenge-grid"><div class="challenge-cell"><div class="challenge-num">01</div><h3>Frame the right problem before committing to a solution.</h3><p>The single most expensive mistake in any capital commitment is solving the wrong problem exceptionally well. Deflection Point is the discipline for finding the from/to shift that defines the real challenge. You apply it to your own live organizational challenge on Day 1—not to a case study, and not to someone else’s industry.</p></div><div class="challenge-cell"><div class="challenge-num">02</div><h3>Generate non-obvious hypotheses and prototype them quickly.</h3><p>Think Wrong produces hypotheses that would not have emerged inside the organization’s existing frame—and builds small, tangible, testable artefacts that produce real signal before significant capital is committed. You leave able to run this discipline with your own leadership team on any significant decision they face.</p></div><div class="challenge-cell"><div class="challenge-num">03</div><h3>Identify and test the assumptions that matter most.</h3><p>Not all assumptions carry the same risk. The SVA Drill identifies which beliefs are Low Certainty / High Impact—the ones where being wrong changes a capital allocation decision. You leave with a tested assumption map for your own live challenge and the methodology to apply it to the next one.</p></div><div class="challenge-cell"><div class="challenge-num">04</div><h3>Bring people with you.</h3><p>Capital bets fail not just because the assumptions were wrong, but because the people who needed to commit to the test never became owners of the question. Think Wrong is a facilitation methodology as much as a thinking methodology. You leave certified and capable of designing and running sessions that move a leadership team from assumption to tested hypothesis to committed action.</p></div></div></section><section class="section section-dark" id="schedule">
+<div class="section-tag">Day by Day</div>
+<h2 class="section-title">The three-day arc.</h2>
+<p class="lead">Each day is structured around two Think Wrong practices and one core epistemic discipline—applied first in facilitated sessions and then immediately applied by each participant to their own live organizational challenge. The methodology compounds across the three days: Day 1 surfaces, Day 2 prioritizes, Day 3 tests and transfers.</p>
+<div class="schedule">
+<div class="day-row day-row--arrival">
+<div class="day-label">
+<div class="day-num" style="font-size:22px; opacity:0.5;">→</div>
+<div class="day-name">Pre-work</div>
+</div>
+<div class="day-content">
+<div class="day-theme">Arrival</div>
+<div class="day-title">Challenge briefing and participant framing</div>
+<p class="day-desc">Participants submit their live organizational challenge in advance: a growth bet, portfolio decision, transformation initiative, or AI deployment where capital is at stake. The challenge brief is reviewed before Day 1. Arrival evening includes a shared dinner where challenges are introduced without solutions—the discipline of staying in the problem longer than feels comfortable begins here.</p>
+<div class="day-pills">
+<span class="pill keynote">Challenge Brief Submission</span>
+<span class="pill field">Opening Dinner</span>
+</div>
+</div>
+</div>
+<div class="day-row">
+<div class="day-label">
+<div class="day-num">01</div>
+<div class="day-name">Day One</div>
+</div>
+<div class="day-content">
+<div class="day-theme">Be Bold / Get Out &amp; Get · Surface</div>
+<div class="day-title">Frame the right problem—before solutions take hold</div>
+<p class="day-desc">Most organizations begin with solutions and work backward to the problem. The Deflection Point discipline reverses this: participants map the from/to transformation their challenge requires and ask whether the problem they are trying to solve is the actual cause of the fragility they need to address. Get Out &amp; Get takes this into live fieldwork—structured consumer and stakeholder interviews using past-behavior anchoring, not opinion gathering. The goal is stories, not projections. By the end of Day 1, each participant has a reframed challenge statement and a first evidence-gap map.</p>
+<div class="day-pills">
+<span class="pill classroom">Deflection Point</span>
+<span class="pill field">Stakeholder Interviews</span>
+<span class="pill keynote">Evidence-Gap Map</span>
+</div>
+</div>
+</div>
+<div class="day-row">
+<div class="day-label">
+<div class="day-num">02</div>
+<div class="day-name">Day Two</div>
+</div>
+<div class="day-content">
+<div class="day-theme">Let Go / Make Stuff · Classify and Prioritize</div>
+<div class="day-title">Distinguish what you know from what you believe—then test what matters most</div>
+<p class="day-desc">The Certainty Map is the central epistemic instrument of this programme: participants map every significant belief underlying their challenge as either untested assumption, testable hypothesis, or validated knowledge. The PAK framework—Presumptions (untestable), Assumptions (testable but not yet tested), Knowledge (evidenced)—makes the classification rigorous. The Super Vital Assumption discipline then prioritizes: which assumptions, if false, would change a capital allocation decision that only the CFO or CEO can authorize? Make Stuff converts those assumptions into the smallest credible evidence-generating artifacts—prototypes, interview guides, test designs—that can produce real signal before capital is committed. By Day 2 close, each participant has a ranked assumption map and at least one small bet designed to test their highest-consequence assumption.</p>
+<div class="day-pills">
+<span class="pill classroom">Certainty Map</span>
+<span class="pill classroom">PAK Classification</span>
+<span class="pill keynote">Super Vital Assumptions</span>
+<span class="pill field">Small Bet Design</span>
+</div>
+</div>
+</div>
+<div class="day-row">
+<div class="day-label">
+<div class="day-num">03</div>
+<div class="day-name">Day Three</div>
+</div>
+<div class="day-content">
+<div class="day-theme">Move Fast / Transfer · Test and Transfer</div>
+<div class="day-title">The escalation question—and the pathway forward</div>
+<p class="day-desc">Day 3 opens with the escalation question: of all the assumptions surfaced across the three days, which ones, if they turned out to be wrong, would change a capital allocation decision that only the CFO or CEO can authorize? Participants present their assumption maps and small bet designs to a facilitated peer panel—real feedback on real challenges, without case-study distance. The Transfer session closes the programme by moving from the methodology applied to the live challenge to the question of how the Activator applies this discipline systematically inside their own organization. Participants leave with the facilitation capability to design and run assumption-surfacing sessions for their teams, and the credential that recognizes them as a Certified Serious Capital Activator™.</p>
+<div class="day-pills">
+<span class="pill keynote">Escalation Question</span>
+<span class="pill field">Peer Panel</span>
+<span class="pill classroom">Transfer Session</span>
+<span class="pill keynote">Certified Serious Capital Activator™</span>
+</div>
+</div>
+</div>
+</div>
+<div class="csg-intro" style="margin-top:40px;">
+<div class="csg-intro-label">Day 3 Escalation Question—Non-Negotiable, Present in Every Programme</div>
+<p>“Of the assumptions we surfaced this week—which ones, if they turned out to be wrong, would change a capital allocation decision that only your CFO or CEO can authorise?”</p>
+<p>This is not a closing exercise. It is the diagnostic question that connects the work of the three days to the Serious Capital Building conversation that should follow. The assumptions that answer it are the entry point to the Growth Gap Diagnostic.</p>
+</div>
+</section>
+<!-- METHODOLOGY -->
+<section class="section section-alt" id="methodology">
+<div class="section-tag">What You Learn</div>
+<h2 class="section-title">The Think Wrong<br/>methodology—applied<br/>to capital decisions.</h2>
+<p class="lead">Every tool is introduced through instruction and immediately applied to the participant’s own live challenge. By Day 3, participants can facilitate the full assumption-surfacing and evidence-design discipline inside their own organization. The methodology is not a set of frameworks—it is a developed capability.</p>
+<div class="method-steps">
+<div class="method-step">
+<div class="step-num-col">1</div>
+<div class="step-body">
+<h4>Deflection Point—frame the right problem before solving it</h4>
+<p>The from/to transformation that defines the real challenge. Applied to the participant’s live organizational challenge on Day 1—and then applied to the assumptions that define why the current frame might be wrong. The most important question is not “what should we build?”—it is “are we working on the right problem for the right reason?”</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">2</div>
+<div class="step-body">
+<h4>Certainty Map + PAK—distinguish knowledge from belief</h4>
+<p>Every significant capital decision contains beliefs masquerading as facts. The Certainty Map surfaces them. The PAK framework classifies each belief as a Presumption (untestable in the current context), an Assumption (testable but not yet tested), or Knowledge (validated through evidence). No governance decision should advance based on Presumptions alone. Participants leave able to run this classification for any challenge, with any team, in any governance context.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">3</div>
+<div class="step-body">
+<h4>Super Vital Assumptions—test what matters most first</h4>
+<p>Not all assumptions carry equal capital consequence. The Super Vital Assumption discipline identifies which assumptions are Tackle First—the ones that, if false, would change a capital allocation decision that only the CFO or CEO can authorize. Participants develop the diagnostic capability to identify SVAs quickly, prioritize them by consequence and testability, and sequence evidence-gathering to resolve the highest-risk unknowns before capital commits at scale.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">4</div>
+<div class="step-body">
+<h4>Make Stuff + Bet Small—build to learn, not to present</h4>
+<p>The smallest credible evidence-generating action bounded by affordable loss. Participants design concrete, testable artifacts—prototypes, interview guides, experiments, demand tests—that put the Super Vital Assumption in front of real people the same day they are made. The discipline: build to learn what you do not know, not to persuade an audience that you do. Evidence before investment. Learning before scale.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">5</div>
+<div class="step-body">
+<h4>Get Out &amp; Get—gather signal from the source, not the organization</h4>
+<p>Lean Customer Discovery methodology applied live. Structured interviews with real stakeholders—consumers, partners, regulators, domain experts—using past-behavior anchoring rather than opinion gathering. The goal is stories about actual past decisions and actions, not projections about hypothetical future behavior. Organizations that test assumptions against internal opinion are not testing assumptions—they are amplifying existing beliefs. The signal must come from outside the room.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">6</div>
+<div class="step-body">
+<h4>Transfer—take the capability home</h4>
+<p>The closing discipline: moving from the methodology applied to the live challenge to the systematic application of the Activator’s capability inside the participant’s own organization. Participants design a transfer plan—the specific governance context, the team, the challenge, and the session structure—for running an assumption-surfacing and evidence-design session within 30 days of leaving. The capability compounds when it is applied repeatedly. The programme provides the foundation; the transfer session ensures it is used.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FOR WHOM -->
+<section class="section section-dark" id="for-whom">
+<div class="section-tag">Who Should Attend</div>
+<h2 class="section-title">For leaders who make<br/>capital bets—and want<br/>to make them better.</h2>
+<p class="lead">The Serious Capital Activator Intensive is designed for senior leaders who are responsible for significant capital commitments—and who want the rigorous, evidence-graded discipline for surfacing and testing the assumptions their most important bets depend on before capital is locked in. The live challenge is the laboratory. The facilitation capability is what leaves with you.</p>
+<div class="whom-grid">
+<div class="whom-col">
+<h3>You should attend if</h3>
+<ul class="whom-list">
+<li>You want the Think Wrong methodology applied to a real organizational challenge—without the field-based industry context of the Innovators Intensives, without the 4.5-day time commitment, and without travel to a specific European location</li><li>You lead or own a significant growth initiative, portfolio decision, or transformation programme—and you want to be more rigorous about testing the assumptions underneath it before capital commits</li>
+<li>You are responsible for innovation, transformation, or strategic investment decisions and want a structured discipline for interrogating your own organizational certainty</li>
+<li>You have experienced Think Wrong in a field-based Innovators Intensive (Wine, Arts, Irish Whiskey, Surf) and want to develop the facilitation capability to apply the methodology inside your own organization</li>
+<li>You want to earn the Certified Serious Capital Activator™ credential and establish the epistemic foundation for progressing to the Serious Capital Architect Intensive (Level 2)</li>
+<li>You want to develop a capability you can run repeatedly—assumption-surfacing and evidence-design sessions that can be applied to any significant organizational decision</li>
+</ul>
+</div>
+<div class="whom-col">
+<h3>You should consider waiting if</h3>
+<ul class="whom-list">
+<li>You do not have a live organizational challenge where capital is genuinely at stake—the programme is applied to real decisions, not simulated ones</li>
+<li>You are looking for a framework to study rather than a methodology to apply—this programme produces tested assumption maps, small bets, and facilitation capability, not analytical models</li>
+<li>You need a predetermined right answer—this programme produces calibrated confidence and sharper questions, not conclusions</li>
+<li>You are not in a position to apply the methodology within your organization after the programme—the capability compounds through use; without a context for application it atrophies</li>
+</ul>
+</div>
+</div>
+<div class="pullquote">The field-based Innovators Intensives (Wine, Arts, Irish Whiskey, Surf) develop the same capability—applied to an external industry. This programme develops it applied to your own challenge. Both paths lead to the same credential, the same escalation question, and the same pathway forward.</div>
+</section>
+<!-- PRACTICAL DETAILS -->
+<section class="section section-alt" id="details">
+<div class="section-tag">Practical Details</div>
+<h2 class="section-title">What you need<br/>to know.</h2>
+<div class="details-grid">
+<div class="detail-cell">
+<div class="detail-label">Format</div>
+<div class="detail-value"><strong>3-day immersive intensive</strong><br/>Arrival evening Day 0. Programme Days 1–3. Departure Day 3 late afternoon.</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Daily Structure</div>
+<div class="detail-value">8:30am–5:30pm daily<br/><strong>Facilitated sessions + live challenge application</strong><br/>Evening session Day 1</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Group Size</div>
+<div class="detail-value"><strong>Maximum 25 participants</strong><br/>Intentionally limited to preserve peer-panel depth and conversation quality</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Language</div>
+<div class="detail-value">Instruction in <strong>English</strong><br/>Live challenge work in participants’ own organizational context and language</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Programme Fee</div>
+<div class="detail-value"><strong>$5,000 per participant</strong><br/>Includes all sessions, materials, and facilitation. Travel and accommodation not included.</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">What Participants Receive</div>
+<div class="detail-value"><strong>Certified Serious Capital Activator™</strong><br/>Assumption map and small bet design for their live challenge<br/>Transfer plan for applying the methodology inside their organization</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Pre-work Required</div>
+<div class="detail-value"><strong>Challenge brief submitted in advance</strong><br/>A one-page description of the live organizational challenge participants will work on across the three days. Guidance provided on registration.</div>
+</div>
+<div class="detail-cell">
+<div class="detail-label">Registration</div>
+<div class="detail-value">First-come, first-served<br/><strong>Deposit required to hold place</strong><br/>Full payment 30 days before programme</div>
+</div>
+</div>
+</section>
+<!-- WHAT COMES NEXT -->
+<section class="section section-dark" id="next">
+<div class="section-tag">What Comes Next</div>
+<h2 class="section-title">The capability you<br/>built this week has<br/>a <span style="color:var(--pink);">structured home.</span></h2>
+<p class="lead">The Serious Capital Activator Intensive is Stage 1 of the Solve Next product ladder—the cognitive ignition layer. The capability developed here is not an end in itself. It is the epistemic precondition for Serious Capital Building—the discipline that allows organizations to build, test, and govern the capital their growth depends on: the ability to distinguish what an organization knows from what it assumes, and to act on that distinction before capital commits.</p>
+<div class="divider"></div>
+<div class="csg-intro">
+<div class="csg-intro-label">The Escalation Question—The Bridge From This Programme to What Follows</div>
+<p>“Of the assumptions we surfaced this week—which ones, if they turned out to be wrong, would change a capital allocation decision that only your CFO or CEO can authorise?”</p>
+<p>The assumptions that answer this question are not hypothetical. They are the entry point for the Growth Gap Diagnostic—the organizational entry product that applies the same epistemic discipline systematically across all six capital forms, determines the Capital Symmetry Stage from the lowest-scoring domain, and maps the cascade pathway that connects where your organization is to where the risk will reach the income statement.</p>
+</div>
+<div class="method-steps">
+<div class="method-step">
+<div class="step-num-col">1</div>
+<div class="step-body">
+<h4>You have earned the Serious Capital Activator designation</h4>
+<p>The Certified Serious Capital Activator™ is Level 1 of the Serious Capital Leadership Ladder. You have developed the discipline to surface what your organization believes, classify it against what it actually knows, and identify the assumptions most consequential to capital allocation. This is the epistemic precondition for every product that follows in the Solve Next system—and it is the identity you now carry as a Serious Capital Builder.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">2</div>
+<div class="step-body">
+<h4>Take the Growth Gap Diagnostic back to your organization</h4>
+<p>This programme applied the assumption-classification discipline to your live challenge. The Growth Gap Diagnostic applies it systematically across all six capital forms of your entire organization—producing the Capital Symmetry Stage determination (set by the lowest-scoring domain, not the average), the evidence quality audit per capital domain, the cascade pathway analysis, and the entropy force assessment. It is the primary organizational entry product. It is what happens when the Activator’s discipline meets the full Serious Capital Building infrastructure of the organization.</p>
+</div>
+</div>
+<div class="method-step">
+<div class="step-num-col">3</div>
+<div class="step-body">
+<h4>Design the Serious Capital Building architecture—Serious Capital Architect Intensive</h4>
+<p>The Architect designs the system that makes the Activator’s discipline structurally consequential across the full organization. The Serious Capital Architect Intensive is a five-day programme that develops the capability to build the eight structural components of a Serious Capital Building system—including evidence-gated stop criteria, entropy-resistant design, and the Create / Protect / Liberate discipline that makes the discipline durable rather than dependent on individual commitment. It is Level 2 of the Serious Capital Leadership Ladder, and the prerequisite for the Serious Capital Governor designation at Level 3.</p>
+</div>
+</div>
+</div>
+<div style="margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; max-width:900px;">
+<div style="background:rgba(255,255,255,0.05); border-top:3px solid var(--pink); padding:20px 18px;">
+<div style="font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,0,153,0.7); margin-bottom:6px;">Level 1 · This Programme</div>
+<div style="font-size:14px; font-weight:700; color:var(--pink); margin-bottom:4px;">Serious Capital Activator™</div>
+<div style="font-size:11px; color:rgba(255,255,255,0.55); line-height:1.55;">$5,000 · 3 days<br/>Your organization is the laboratory.</div>
+</div>
+<div style="background:rgba(255,255,255,0.05); border-top:3px solid rgba(255,255,255,0.15); padding:20px 18px;">
+<div style="font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;">Organizational · Primary Entry</div>
+<div style="font-size:14px; font-weight:700; color:var(--white); margin-bottom:4px;">Growth Gap Diagnostic</div>
+<div style="font-size:11px; color:rgba(255,255,255,0.55); line-height:1.55;">$125K–$200K depending on scale<br/>The escalation question, systematically.</div>
+</div>
+<div style="background:rgba(255,255,255,0.05); border-top:3px solid rgba(255,255,255,0.15); padding:20px 18px;">
+<div style="font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:6px;">Level 2 · Five Days</div>
+<div style="font-size:14px; font-weight:700; color:var(--white); margin-bottom:4px;">Serious Capital Architect™</div>
+<div style="font-size:11px; color:rgba(255,255,255,0.55); line-height:1.55;">$12,500 · Architect Intensive<br/>Design the Serious Capital Building system.</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta-section" id="register">
+<h2 class="cta-title">Ready to <span>activate</span><br/>capital clarity?</h2>
+<p class="cta-sub">Twenty-five participants. Three days. Your live organizational challenge. The methodology is Think Wrong. The credential is yours.</p>
+<div class="cta-buttons">
+<a class="btn-primary" href="#">Register Your Interest</a>
+<a class="btn-outline" href="#">Download Programme Brief</a>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div>
+<div class="footer-brand">Solve/<span>Next</span> · Think Wrong</div>
+<div class="footer-tagline">Govern the decade.</div>
+</div>
+<div>Serious Capital Activator Intensive  ·  </div></footer></body></html>
